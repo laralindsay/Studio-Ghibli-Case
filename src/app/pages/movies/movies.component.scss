@@ -1,6 +1,22 @@
-.movies-container{
+.movies-container {
   display: grid;
   justify-content: center;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 100px)
+  grid-template-columns: repeat(2, 160px);
+  text-align: center;
+
+  .card-container{
+    margin: 10px 10px;
+  }
+  .favorite {
+    color: #fff;
+    position: absolute;
+    z-index: 4;
+    top: -8px;
+    right: -10px;
+  }
+
+  h5 {
+    color: #717171;
+  }
 }

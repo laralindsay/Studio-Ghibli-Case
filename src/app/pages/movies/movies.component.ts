@@ -6,13 +6,20 @@ import { FilmsService } from 'src/api—studio-ghibli-case/services';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss'],
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, CommonModule, MatGridListModule],
+  imports: [
+    MatCardModule,
+    MatButtonModule,
+    CommonModule,
+    MatGridListModule,
+    MatIconModule,
+  ],
 })
 export class MoviesComponent implements OnInit {
   constructor(private movieService: FilmsService) {}

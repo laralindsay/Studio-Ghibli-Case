@@ -1,0 +1,14 @@
+.score {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  position: absolute;
+  z-index: 4;
+  top: 4px;
+  right: 8px;
+  font-size: 15px;
+  background: -webkit-linear-gradient(rgba(238, 174, 202, 1), #94bbe9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
