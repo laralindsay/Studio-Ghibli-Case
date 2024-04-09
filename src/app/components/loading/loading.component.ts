@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, numberAttribute } from '@angular/core';
 
 @Component({
   selector: 'app-loading',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./loading.component.scss']
 })
 export class LoadingComponent {
+  @Input({ transform: numberAttribute }) size?: number;
 
 }
