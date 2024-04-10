@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./containers/main/main.module').then(m => m.MainModule)
-  }
+  },
 ];
 
 @NgModule({

@@ -1,15 +1,18 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  MatDialog,
+  MatDialogModule,
+} from '@angular/material/dialog';
 
 import { CommonModule } from '@angular/common';
-import { DialogComponent } from '@app/components/dialog/dialog.component';
 import { Films } from './../../../api—studio-ghibli-case/models/films';
 import { FilmsService } from 'src/api—studio-ghibli-case/services';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuTrigger } from '@angular/material/menu';
+import { MoviesDialogComponent } from './movies-dialog/movies-dialog.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -24,14 +27,20 @@ import { RouterModule } from '@angular/router';
     MatGridListModule,
     MatIconModule,
     MatDialogModule,
-    RouterModule
+    RouterModule,
+    MoviesDialogComponent
   ],
 })
 export class MoviesComponent implements OnInit {
+  @Input() idFilmsChild = new Array();
   @ViewChild('menuTrigger')
   menuTrigger!: MatMenuTrigger;
 
-  constructor(private movieService: FilmsService, public dialog: MatDialog) {}
+
+  constructor(
+    private movieService: FilmsService,
+    public dialog: MatDialog,
+  ) {}
 
   ngOnInit() {
     this.getMovies();
@@ -39,17 +48,19 @@ export class MoviesComponent implements OnInit {
 
   movie$: any;
 
+
   getMovies() {
     this.movieService.getFilms({}).subscribe((data: Films[]) => {
       this.movie$ = data;
     });
   }
 
-  openDialog(id: any) {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      restoreFocus: false,
+  openDialog( ) {
+    const dialogRef = this.dialog.open(MoviesDialogComponent, {
+      restoreFocus: false
     });
     dialogRef.afterClosed().subscribe(() => this.menuTrigger.focus());
-    console.log(id)
   }
+
+
 }

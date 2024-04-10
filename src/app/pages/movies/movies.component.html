@@ -6,7 +6,7 @@
     <img class="img-movie" mat-card-image src="{{ movie.image }}" alt="Photo of {{movie.title}}" />
     <mat-card-content>
 
-      <h4 (click)="openDialog(movie.id)" [routerLink]="['/films', movie.id]">
+      <h4  (click)="openDialog()" >
         {{ movie.title }}
       </h4>
 
@@ -16,4 +16,3 @@
     </mat-card-content>
   </mat-card>
 </div>
-

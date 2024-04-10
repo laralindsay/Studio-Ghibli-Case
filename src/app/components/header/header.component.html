@@ -1,27 +1,32 @@
 <div class="header-container">
-<mat-toolbar>
-  <div mat-icon-button >
-    <img class="img-icon" src="assets/images/totoro-icon.png">
-  </div>
-  <h5>Studio Ghibli Case</h5>
-  <span class="spacer"></span>
-  <button mat-icon-button aria-label="menu icon" [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-</mat-toolbar>
+  <mat-toolbar>
+    <div mat-icon-button>
+      <img class="img-icon" src="assets/images/totoro-icon.png" />
+    </div>
+    <h5>Studio Ghibli Case</h5>
+    <span class="spacer"></span>
+    <button mat-icon-button aria-label="menu icon" [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-toolbar>
 </div>
-<mat-menu #menu="matMenu">
+<mat-menu #menu="matMenu" >
+  <a [routerLink]="['/favorites']" >
+    <button mat-menu-item disabled>
+      <mat-icon>favorite</mat-icon>
+      <span>Favorites</span>
+    </button></a
+  >
+  <a [routerLink]="['/movies']">
   <button mat-menu-item>
     <mat-icon>home</mat-icon>
     <span>Home</span>
   </button>
-  <button mat-menu-item>
-    <mat-icon>favorite</mat-icon>
-    <span>Favorites</span>
-  </button>
-  <button mat-menu-item>
+</a>
+<a [routerLink]="['/ranking']">
+  <button mat-menu-item  disabled>
     <mat-icon>trending_up</mat-icon>
     <span>Ranking</span>
   </button>
+</a>
 </mat-menu>
-

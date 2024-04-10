@@ -1,11 +1,22 @@
 .movies-container {
-  display: grid;
-  justify-content: center;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 160px);
-  text-align: center;
+  @media screen {
+    @media (min-width: 320px) {
+      display: grid;
+      justify-content: center;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 160px);
+      text-align: center;
+    }
 
-  .card-container{
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 300px);
+
+    }
+  }
+
+  .card-container {
     margin: 10px 10px;
   }
   .favorite {
