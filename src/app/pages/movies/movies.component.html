@@ -1,13 +1,15 @@
 <div class="movies-container">
   <mat-card  *ngFor="let movie of movie$" class="card-container">
-    <button class="favorite" mat-icon-button aria-label="Example icon button with a heart icon">
+    <button class="favorite" mat-icon-button>
       <mat-icon>favorite</mat-icon>
     </button>
     <img class="img-movie" mat-card-image src="{{ movie.image }}" alt="Photo of {{movie.title}}" />
     <mat-card-content>
-      <h4>
+
+      <h4 (click)="openDialog(movie.id)" [routerLink]="['/films', movie.id]">
         {{ movie.title }}
       </h4>
+
       <h5>
         {{ movie.director }}
       </h5>

@@ -5,10 +5,23 @@
   </div>
   <h5>Studio Ghibli Case</h5>
   <span class="spacer"></span>
-  <button mat-icon-button aria-label="menu icon">
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button aria-label="menu icon" [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
   </button>
 </mat-toolbar>
 </div>
-
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>favorite</mat-icon>
+    <span>Favorites</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>trending_up</mat-icon>
+    <span>Ranking</span>
+  </button>
+</mat-menu>
 

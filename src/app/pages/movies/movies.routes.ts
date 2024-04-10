@@ -1,14 +1,13 @@
-import { MoviesComponent } from './movies.component';
-import { Routes } from '@angular/router';
+import { MoviesComponent } from "./movies.component";
+import { Routes } from "@angular/router";
 
 export const MoviesRoutes: Routes = [
-  {
-    path: '',
+  { path: '',
     children: [
       {
-        path: '',
-        component: MoviesComponent,
-      },
-    ],
-  },
-];
+        path:'',
+        component: MoviesComponent
+      }
+    ]
+  }
+]
