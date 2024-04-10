@@ -1,21 +1,16 @@
 import {
   Component,
-  EventEmitter,
-  Inject,
   Input,
   OnInit,
-  Output,
 } from '@angular/core';
-import {
-  MAT_DIALOG_DATA,
-  MatDialogModule,
-  MatDialogRef,
-} from '@angular/material/dialog';
 
 import { CommonModule } from '@angular/common';
 import { Films } from 'src/api—studio-ghibli-case/models';
 import { FilmsService } from 'src/api—studio-ghibli-case/services';
 import { MatButtonModule } from '@angular/material/button';
+import {
+  MatDialogModule,
+} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-movies-dialog',
