@@ -11,7 +11,7 @@
     @media (min-width: 768px) {
       display: grid;
       grid-template-rows: repeat(2, 1fr);
-      grid-template-columns: repeat(3, 300px);
+      grid-template-columns: repeat(4, 300px);
     }
   }
 
@@ -26,17 +26,28 @@
     right: -10px;
   }
 
-.details {
-  h6{
-    color: #717171;
+  .favorite:focus {
+    background-color: red;
+  }
 
+  .details {
+    h6 {
+      color: #717171;
+    }
+    p {
+      font-size: 15px;
+    }
   }
-  p{
-    font-size: 15px;
-  }
-}
 
   h4 {
     cursor: pointer;
+  }
+
+  .green {
+    background-color: none;
+  }
+
+  .red {
+    background-color: red;
   }
 }

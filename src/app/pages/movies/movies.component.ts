@@ -35,6 +35,8 @@ export class MoviesComponent implements OnInit {
 
   movie$: any;
   idFilmsChild!: Films;
+  toggle = true;
+  status = 'Enable';
 
   getMovies() {
     this.movieService.getFilms({}).subscribe((data: Films[]) => {
@@ -42,4 +44,9 @@ export class MoviesComponent implements OnInit {
     });
   }
 
+
+  enableDisableRule() {
+    this.toggle = !this.toggle;
+    this.status = this.toggle ? 'Enable' : 'Disable';
+}
 }

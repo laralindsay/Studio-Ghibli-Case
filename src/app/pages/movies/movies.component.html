@@ -1,6 +1,6 @@
 <div class="movies-container">
   <mat-card *ngFor="let movie of movie$" class="card-container">
-    <button class="favorite" mat-icon-button>
+    <button class="favorite" mat-icon-button (click)="enableDisableRule()">
       <mat-icon>favorite</mat-icon>
     </button>
     <img
