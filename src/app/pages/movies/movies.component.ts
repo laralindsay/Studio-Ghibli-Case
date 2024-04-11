@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   MatButton,
   MatButtonModule,
@@ -6,7 +6,6 @@ import {
 } from '@angular/material/button';
 
 import { CommonModule } from '@angular/common';
-import { CookieService } from 'ngx-cookie-service';
 import { Films } from './../../../api—studio-ghibli-case/models/films';
 import { FilmsService } from 'src/api—studio-ghibli-case/services';
 import { MatCardModule } from '@angular/material/card';
@@ -34,10 +33,7 @@ export class MoviesComponent implements OnInit {
   @ViewChild('button')
   button!: MatIconButton;
 
-  constructor(
-    private movieService: FilmsService,
-    private cookieService: CookieService
-  ) {}
+  constructor(private movieService: FilmsService) {}
 
   ngOnInit() {
     this.getMovies();
@@ -58,10 +54,5 @@ export class MoviesComponent implements OnInit {
   enableDisableRule() {
     this.toggle = !this.toggle;
     this.status = this.toggle ? 'Enable' : 'Disable';
-  }
-
-  favoritesItem() {
-    this.cookieService.set('teste', 'mycookie');
-    console.log(this.cookieService);
   }
 }

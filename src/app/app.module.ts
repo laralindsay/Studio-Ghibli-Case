@@ -21,7 +21,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingService, multi: true },
-    CookieService,
   ],
   bootstrap: [AppComponent],
 })
