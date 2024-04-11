@@ -1,15 +1,18 @@
 <div class="movies-container">
-  <mat-card  *ngFor="let movie of movie$" class="card-container">
+  <mat-card *ngFor="let movie of movie$" class="card-container">
     <button class="favorite" mat-icon-button>
       <mat-icon>favorite</mat-icon>
     </button>
-    <img class="img-movie" mat-card-image src="{{ movie.image }}" alt="Photo of {{movie.title}}" />
+    <img
+      class="img-movie"
+      mat-card-image
+      src="{{ movie.image }}"
+      alt="Photo of {{ movie.title }}"
+    />
     <mat-card-content>
-
-      <h4  (click)="openDialog()" >
+      <h4>
         {{ movie.title }}
       </h4>
-
       <h5>
         {{ movie.director }}
       </h5>
