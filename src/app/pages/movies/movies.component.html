@@ -10,11 +10,11 @@
       alt="Photo of {{ movie.title }}"
     />
     <mat-card-content>
-      <h4>
+      <h4 (click)="favoritesItem()" >
         {{ movie.title }}
       </h4>
       <div class="details">
-        <h6>Director: {{ movie.director }}</h6>
+        <h6 >Director: {{ movie.director }}</h6>
         <h6>Original Title: {{ movie.original_title }}</h6>
         <p>
           {{ movie.description }}

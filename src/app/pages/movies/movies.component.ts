@@ -1,10 +1,14 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  MatButton,
+  MatButtonModule,
+  MatIconButton,
+} from '@angular/material/button';
 
 import { CommonModule } from '@angular/common';
+import { CookieService } from 'ngx-cookie-service';
 import { Films } from './../../../api—studio-ghibli-case/models/films';
 import { FilmsService } from 'src/api—studio-ghibli-case/services';
-import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,14 +31,21 @@ import { RouterModule } from '@angular/router';
   ],
 })
 export class MoviesComponent implements OnInit {
-  constructor(private movieService: FilmsService) {}
+  @ViewChild('button')
+  button!: MatIconButton;
+
+  constructor(
+    private movieService: FilmsService,
+    private cookieService: CookieService
+  ) {}
 
   ngOnInit() {
     this.getMovies();
   }
 
   movie$: any;
-  idFilmsChild!: Films;
+  idFilmsChild!: any;
+  idFavoriteFilms!: Films;
   toggle = true;
   status = 'Enable';
 
@@ -44,9 +55,13 @@ export class MoviesComponent implements OnInit {
     });
   }
 
-
   enableDisableRule() {
     this.toggle = !this.toggle;
     this.status = this.toggle ? 'Enable' : 'Disable';
-}
+  }
+
+  favoritesItem() {
+    this.cookieService.set('teste', 'mycookie');
+    console.log(this.cookieService);
+  }
 }
