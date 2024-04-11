@@ -50,8 +50,7 @@ export class MoviesComponent implements OnInit {
   movie$: any;
   idFilmsChild!: any;
   idFavoriteFilms!: Films;
-  toggle = true;
-  status = 'Enable';
+  durationInSeconds = 5;
 
   getMovies() {
     this.movieService.getFilms({}).subscribe((data: Films[]) => {
@@ -59,10 +58,11 @@ export class MoviesComponent implements OnInit {
     });
   }
 
-  favoriteMovie() {
+  favoriteMovies() {
     this._snackBar.open('Film added to the list!', 'Okay', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
+      duration: this.durationInSeconds * 900,
     });
   }
 }
