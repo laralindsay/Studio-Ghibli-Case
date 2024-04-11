@@ -1,13 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
-  MatButton,
-  MatButtonModule,
-  MatIconButton,
-} from '@angular/material/button';
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarModule,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 
 import { CommonModule } from '@angular/common';
 import { Films } from './../../../api—studio-ghibli-case/models/films';
 import { FilmsService } from 'src/api—studio-ghibli-case/services';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,18 +29,24 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     RouterModule,
     MoviesDialogComponent,
+    MatSnackBarModule
   ],
 })
 export class MoviesComponent implements OnInit {
   @ViewChild('button')
-  button!: MatIconButton;
+  button!: ElementRef;
 
-  constructor(private movieService: FilmsService) {}
+  constructor(
+    private movieService: FilmsService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit() {
     this.getMovies();
   }
 
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   movie$: any;
   idFilmsChild!: any;
   idFavoriteFilms!: Films;
@@ -51,11 +59,10 @@ export class MoviesComponent implements OnInit {
     });
   }
 
-
-
-  enableDisableRule() {
-    this.toggle = !this.toggle;
-    this.status = this.toggle ? 'Enable' : 'Disable';
+  favoriteMovie() {
+    this._snackBar.open('Film added to the list!', 'Okay', {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+    });
   }
-
 }
