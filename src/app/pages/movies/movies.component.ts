@@ -51,8 +51,11 @@ export class MoviesComponent implements OnInit {
     });
   }
 
+
+
   enableDisableRule() {
     this.toggle = !this.toggle;
     this.status = this.toggle ? 'Enable' : 'Disable';
   }
+
 }

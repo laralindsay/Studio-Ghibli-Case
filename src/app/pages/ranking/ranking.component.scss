@@ -1,14 +1,54 @@
-.score {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  color: #fff;
-  position: absolute;
-  z-index: 4;
-  top: 4px;
-  right: 8px;
-  font-size: 15px;
-  background: -webkit-linear-gradient(rgba(238, 174, 202, 1), #94bbe9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.ranking-container {
+  @media screen {
+    @media (min-width: 320px) {
+      display: grid;
+      justify-content: center;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 160px);
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 300px);
+    }
+  }
+
+  .card-container {
+    margin: 10px 10px;
+  }
+  .score {
+    color: #fff;
+    position: absolute;
+    z-index: 4;
+    top: -25px;
+    right: 10px;
+    font-size: 25px;
+  }
+
+  .score:focus {
+    color: #b00020;
+  }
+
+  .details {
+    h6 {
+      color: #717171;
+    }
+    p {
+      font-size: 15px;
+    }
+  }
+
+  h4 {
+    cursor: pointer;
+  }
+
+  .green {
+    background-color: none;
+  }
+
+  .red {
+    background-color: red;
+  }
 }

@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { CookieService } from 'ngx-cookie-service';
 import { LoadingComponent } from './components/loading/loading.component';
 import { LoadingService } from './services/loading.service';
 import { NgModule } from '@angular/core';

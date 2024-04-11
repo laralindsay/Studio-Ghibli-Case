@@ -10,17 +10,14 @@
     </button>
   </mat-toolbar>
 </div>
-<mat-menu #menu="matMenu" >
-  <a [routerLink]="['/movies']">
-  <button mat-menu-item>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="['/movies']">
     <mat-icon>home</mat-icon>
     <span>Home</span>
   </button>
-</a>
-<a [routerLink]="['/ranking']">
-  <button mat-menu-item  disabled>
+
+  <button mat-menu-item [routerLink]="['/ranking']">
     <mat-icon>trending_up</mat-icon>
     <span>Ranking</span>
   </button>
-</a>
 </mat-menu>
