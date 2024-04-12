@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MoviesDialogComponent } from './movies-dialog/movies-dialog.component';
+import { MoviesSnackbarComponent } from './movies-snackbar/movies-snackbar.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -50,7 +51,7 @@ export class MoviesComponent implements OnInit {
   movie$: any;
   idFilmsChild!: any;
   idFavoriteFilms!: Films;
-  durationInSeconds = 5;
+  durationInSeconds = 3;
 
   getMovies() {
     this.movieService.getFilms({}).subscribe((data: Films[]) => {
@@ -59,10 +60,11 @@ export class MoviesComponent implements OnInit {
   }
 
   favoriteMovies() {
-    this._snackBar.open('Film added to the list!', 'Okay', {
+    this._snackBar.openFromComponent(MoviesSnackbarComponent, {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
-      duration: this.durationInSeconds * 900,
+      duration: this.durationInSeconds * 600,
+      panelClass: 'app-notification-success',
     });
   }
 }

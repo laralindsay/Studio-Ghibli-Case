@@ -26,4 +26,18 @@ $my-theme: mat.define-light-theme(
   )
 );
 
+.mat-mdc-snack-bar-container {
+  --mat-mdc-snack-bar-button-color: #ffffff;
+  --mdc-snackbar-supporting-text-color: #ffffff;
+
+  &.app-notification-success {
+    --mdc-snackbar-container-color: #000000;
+    border-radius: 15px;
+  }
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  border-radius: 30px !important;
+}
+
 @include mat.all-component-themes($my-theme);
