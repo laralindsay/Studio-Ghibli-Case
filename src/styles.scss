@@ -31,8 +31,9 @@ $my-theme: mat.define-light-theme(
   --mdc-snackbar-supporting-text-color: #ffffff;
 
   &.app-notification-success {
-    --mdc-snackbar-container-color: #000000;
-    border-radius: 15px;
+    --mdc-snackbar-container-color: #fff;
+    --mdc-snackbar-supporting-text-color: #000;
+
   }
 }
 
